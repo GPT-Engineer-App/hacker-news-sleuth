@@ -30,28 +30,32 @@ const Index = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Top 100 Hacker News Stories</h1>
-      <div className="flex space-x-2 mb-6">
-        <div className="relative flex-grow">
-          <Input
-            type="text"
-            placeholder="Search stories..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10"
-          />
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+    <div className="min-h-screen bg-gray-900 text-green-400">
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold mb-6 text-green-500 border-b-2 border-green-500 pb-2">
+          <span className="text-pink-500">&lt;</span>Hacker News Top 100<span className="text-pink-500">/&gt;</span>
+        </h1>
+        <div className="flex space-x-2 mb-6">
+          <div className="relative flex-grow">
+            <Input
+              type="text"
+              placeholder="Hack the search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10 bg-gray-800 border-green-500 text-green-400 placeholder-green-600"
+            />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-500" size={20} />
+          </div>
+          <Button 
+            onClick={handleSearch}
+            className="bg-green-500 hover:bg-green-600 text-gray-900 font-bold"
+          >
+            Execute
+          </Button>
         </div>
-        <Button 
-          onClick={handleSearch}
-          className="bg-pink-500 hover:bg-pink-600 text-white"
-        >
-          Search
-        </Button>
+        {error && <p className="text-pink-500">Error: {error.message}</p>}
+        <HackerNewsList stories={filteredStories} isLoading={isLoading} />
       </div>
-      {error && <p className="text-red-500">Error: {error.message}</p>}
-      <HackerNewsList stories={filteredStories} isLoading={isLoading} />
     </div>
   );
 };
