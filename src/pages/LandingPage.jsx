@@ -4,7 +4,7 @@ import { Terminal, Code, Zap } from 'lucide-react';
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-green-400 flex flex-col justify-center items-center">
+    <div className="text-green-400 flex flex-col justify-center items-center py-16">
       <h1 className="text-5xl font-bold mb-6 text-green-500">
         <span className="text-pink-500">&lt;</span>HackerNews Explorer<span className="text-pink-500">/&gt;</span>
       </h1>
