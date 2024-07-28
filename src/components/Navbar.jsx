@@ -4,7 +4,7 @@ import { navItems } from '../nav-items';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800 text-green-400 p-4">
+    <nav className="bg-gray-800 text-green-400 p-4 w-full">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <Terminal size={24} className="text-pink-500" />

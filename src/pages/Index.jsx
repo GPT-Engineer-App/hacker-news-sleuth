@@ -31,8 +31,7 @@ const Index = () => {
   };
 
   return (
-    <div className="text-green-400">
-      <div className="container mx-auto px-4 py-8">
+    <div className="text-green-400 container mx-auto px-4 py-8">
         <div className="flex items-center justify-between mb-6">
           <Link to="/" className="text-green-500 hover:text-green-400 flex items-center">
             <ArrowLeft className="mr-2" />

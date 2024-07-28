@@ -15,7 +15,7 @@ const App = () => (
       <BrowserRouter>
         <div className="flex flex-col min-h-screen bg-gray-900">
           <Navbar />
-          <main className="flex-grow">
+          <main className="flex-grow flex flex-col">
             <Routes>
               {navItems.map(({ to, page }) => (
                 <Route key={to} path={to} element={page} />
