@@ -14,9 +14,12 @@ const fetchTopStories = async () => {
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const { data, isLoading, error } = useQuery(['topStories'], fetchTopStories);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['topStories'],
+    queryFn: fetchTopStories,
+  });
 
-  const filteredStories = data?.hits.filter(story =>
+  const filteredStories = data?.hits?.filter(story =>
     story.title.toLowerCase().includes(searchTerm.toLowerCase())
   ) || [];
 
