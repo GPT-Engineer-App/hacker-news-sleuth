@@ -43,7 +43,12 @@ const Index = () => {
           />
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
         </div>
-        <Button onClick={handleSearch}>Search</Button>
+        <Button 
+          onClick={handleSearch}
+          className="bg-pink-500 hover:bg-pink-600 text-white"
+        >
+          Search
+        </Button>
       </div>
       {error && <p className="text-red-500">Error: {error.message}</p>}
       <HackerNewsList stories={filteredStories} isLoading={isLoading} />
