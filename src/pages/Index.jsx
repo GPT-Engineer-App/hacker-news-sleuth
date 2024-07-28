@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { Search } from 'lucide-react';
+import { Search, ArrowLeft } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import HackerNewsList from '../components/HackerNewsList';
 
 const fetchTopStories = async () => {
@@ -32,9 +33,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-green-400">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-6 text-green-500 border-b-2 border-green-500 pb-2">
-          <span className="text-pink-500">&lt;</span>Hacker News Top 100<span className="text-pink-500">/&gt;</span>
-        </h1>
+        <div className="flex items-center justify-between mb-6">
+          <Link to="/" className="text-green-500 hover:text-green-400 flex items-center">
+            <ArrowLeft className="mr-2" />
+            Back to Home
+          </Link>
+          <h1 className="text-4xl font-bold text-green-500">
+            <span className="text-pink-500">&lt;</span>Hacker News Top 100<span className="text-pink-500">/&gt;</span>
+          </h1>
+        </div>
         <div className="flex space-x-2 mb-6">
           <div className="relative flex-grow">
             <Input

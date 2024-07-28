@@ -1,4 +1,5 @@
-import { Home } from "lucide-react";
+import { Home, Newspaper } from "lucide-react";
+import LandingPage from "./pages/LandingPage.jsx";
 import Index from "./pages/Index.jsx";
 
 /**
@@ -9,6 +10,12 @@ export const navItems = [
     title: "Home",
     to: "/",
     icon: <Home className="h-4 w-4" />,
+    page: <LandingPage />,
+  },
+  {
+    title: "News",
+    to: "/news",
+    icon: <Newspaper className="h-4 w-4" />,
     page: <Index />,
   },
 ];
